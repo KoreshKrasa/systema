@@ -17,7 +17,7 @@ dnf5 -y install fish helix steam-devices libvirt jetbrains-mono-fonts
 dnf5 -y remove firefox firefox-langpacks
 
 dnf5 -y copr enable atim/lazygit
-dnf5 -y install lazygit ruff uv cargo rust-analyzer
+dnf5 -y install lazygit ruff uv python3-lsp-server cargo rust-analyzer
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
