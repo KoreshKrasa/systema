@@ -49,7 +49,8 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY build.sh /tmp/build.sh
-ADD https://github.com/ShadowBlip/gamescope-dbus/releases/latest/download/gamescope-dbus-1.8.0-1.x86_64.rpm /tmp/gamescope-dbus.rpm
+ADD https://github.com/ShadowBlip/gamescope-dbus/releases/download/v1.8.0/gamescope-dbus-1.8.0-1.x86_64.rpm /tmp/gamescope-dbus.rpm
+ADD https://github.com/ShadowBlip/InputPlumber/releases/download/v0.44.1/inputplumber-0.44.1-1.x86_64.rpm /tmp/inputplumber.rpm
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     ostree container commit
