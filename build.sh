@@ -21,6 +21,10 @@ dnf5 -y install lazygit ruff uv python3-lsp-server cargo rust-analyzer rustfmt
 
 dnf5 -y install gamescope
 dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm
+
+dnf5 -y copr enable ryanabx/cosmic-epoch
+dnf5 -y install cosmic-desktop
+
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
