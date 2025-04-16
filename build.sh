@@ -23,7 +23,7 @@ dnf5 -y install gamescope
 dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm
 
 dnf5 -y copr enable ryanabx/cosmic-epoch
-dnf5 -y install cosmic-desktop
+dnf5 -y update
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
