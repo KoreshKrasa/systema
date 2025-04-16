@@ -13,7 +13,7 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 -y install fish helix steam-devices libvirt jetbrains-mono-fonts
+dnf5 -y install fish helix steam-devices libvirt jetbrains-mono-fonts nautilus
 dnf5 -y remove firefox firefox-langpacks
 
 dnf5 -y copr enable atim/lazygit
