@@ -33,8 +33,7 @@ dnf5 -y install \
   rust-analyzer \
   rustfmt \
   gamescope \
-  cosmic-desktop \
-  jj
+  cosmic-desktop
 
 dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm
 
