@@ -4,44 +4,22 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-
-### Install packages
-
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
-# this installs a package from fedora repos
-dnf5 -y remove firefox firefox-langpacks
 dnf5 -y copr enable atim/lazygit
 dnf5 -y copr enable ryanabx/cosmic-epoch
+dnf5 -y copr enable yalter/niri
 
-dnf5 -y install \
-  fish \
-  helix \
-  steam-devices \
-  libvirt \
-  jetbrains-mono-fonts \
-  nautilus \
-  gvfs-smb \
-  lazygit \
-  ruff \
-  uv \
-  python3-lsp-server \
-  cargo \
-  rust-analyzer \
-  rustfmt \
-  gamescope \
-  cosmic-desktop
 
-dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm
+dnf5 -y remove firefox firefox-langpacks
+
+dnf5 -y install fish helix steam-devices \
+  libvirt jetbrains-mono-fonts nautilus gvfs-smb \
+  lazygit ruff uv python3-lsp-server cargo rust-analyzer rustfmt \
+  niri \
+  cosmic-desktop \
+  gamescope
 
 dnf5 -y update
 
-# this would install a package from rpmfusion
-# rpm-ostree install vlc
-
-#### Example for enabling a System Unit File
+dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm
 
 systemctl enable podman.socket
