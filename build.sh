@@ -16,10 +16,10 @@ dnf5 -y install fish helix steam-devices \
   lazygit ruff uv python3-lsp-server cargo rust-analyzer rustfmt \
   niri xwayland-satellite \
   cosmic-desktop \
-  gamescope
+  # gamescope
 
 dnf5 -y update
 
-dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm
+dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm /tmp/gamescope.rpm
 
 systemctl enable podman.socket
