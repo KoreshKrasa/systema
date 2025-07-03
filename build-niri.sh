@@ -13,7 +13,7 @@ dnf5 -y install fish helix steam-devices \
   libvirt jetbrains-mono-fonts nautilus gvfs-smb \
   lazygit ruff uv python3-lsp-server cargo rust-analyzer rustfmt \
   niri xwayland-satellite \
-  btop gdm \
+  btop lightdm-gtk \
 
 dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm /tmp/gamescope.rpm
 
