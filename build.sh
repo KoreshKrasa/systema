@@ -17,10 +17,8 @@ dnf5 -y install fish helix steam-devices \
 
 dnf5 -y update
 
-dnf5 -y install \
-  # /tmp/gamescope-dbus.rpm \
-  /tmp/inputplumber.rpm \
-  /tmp/gamescope.rpm \
+dnf5 -y install /tmp/inputplumber.rpm /tmp/gamescope.rpm 
+# /tmp/gamescope-dbus.rpm \
 
 dnf5 -y copr disable atim/lazygit
 dnf5 -y copr disable ryanabx/cosmic-epoch
