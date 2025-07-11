@@ -56,7 +56,7 @@ jobs:
               BUILD_TAGS+=("${TAG}-${TIMESTAMP}")
           done
 
-          BUILD_TAGS+=("${TIMESTAMP}")
+          BUILD_TAGS+=("${TIMESTAMP}-niri")
           BUILD_TAGS+=("niri")
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
