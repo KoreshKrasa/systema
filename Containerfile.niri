@@ -11,20 +11,15 @@ COPY res/emptty-conf /emptty/etc/emptty/conf
 
 # main
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
+
 COPY --from=builder /emptty /
 COPY build-niri.sh /tmp/build.sh
-
-COPY niri/cosmic-panel.service /usr/lib/systemd/user/cosmic-panel.service
-COPY niri/cosmic-bg.service /usr/lib/systemd/user/cosmic-bg.service
-COPY niri/cosmic-app-library.service /usr/lib/systemd/user/cosmic-app-library.service
-COPY niri/cosmic-launcher.service /usr/lib/systemd/user/cosmic-launcher.service
-COPY niri/cosmic-settings-daemon.service /usr/lib/systemd/user/cosmic-settings-daemon.service
+COPY niri/swww.service /usr/lib/systemd/user/swww.service
 COPY niri/pkgs /tmp/pkgs
 
 ADD https://github.com/ShadowBlip/gamescope-dbus/releases/download/v1.8.0/gamescope-dbus-1.8.0-1.x86_64.rpm /tmp/gamescope-dbus.rpm
 ADD https://github.com/ShadowBlip/InputPlumber/releases/download/v0.44.1/inputplumber-0.44.1-1.x86_64.rpm /tmp/inputplumber.rpm
 ADD https://kojipkgs.fedoraproject.org//packages/gamescope/3.15.15/2.fc42/x86_64/gamescope-3.15.15-2.fc42.x86_64.rpm /tmp/gamescope.rpm
-
 ADD --chmod=644 https://raw.githubusercontent.com/KoreshKrasa/kropki/refs/heads/main/niri/config.kdl /etc/niri/config.kdl
 
 RUN mkdir -p /var/lib/alternatives && \

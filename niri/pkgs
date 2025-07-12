@@ -1,11 +1,14 @@
 niri
 xwayland-satellite
-cosmic-settings
-cosmic-bg
-cosmic-panel
-cosmic-app-library
-cosmic-launcher
-cosmic-applets
+rofi-wayland
+swww
+yazi
+# cosmic-settings
+# cosmic-bg
+# cosmic-panel
+# cosmic-app-library
+# cosmic-launcher
+# cosmic-applets
 fish
 helix
 steam-devices 
