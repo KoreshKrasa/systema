@@ -4,5 +4,5 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=%h/.cargo/bin/swww-daemon
+ExecStart=/usr/bin/swww-daemon
 Restart=on-failure
