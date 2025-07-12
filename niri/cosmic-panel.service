@@ -4,5 +4,5 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/socmic-panel
+ExecStart=/usr/bin/cosmic-panel
 Restart=on-failure
