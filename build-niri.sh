@@ -4,21 +4,18 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-dnf5 -y copr enable atim/lazygit
-dnf5 -y copr enable yalter/niri
+dnf -y copr enable atim/lazygit
+dnf -y copr enable yalter/niri
 
-dnf5 -y remove firefox firefox-langpacks
-
-dnf5 -y install fish helix steam-devices \
-  libvirt jetbrains-mono-fonts nautilus gvfs-smb \
-  lazygit ruff uv python3-lsp-server cargo rust-analyzer rustfmt \
-  niri xwayland-satellite \
-  btop \
-
-dnf5 -y install /tmp/gamescope-dbus.rpm /tmp/inputplumber.rpm /tmp/gamescope.rpm
+dnf -y remove firefox firefox-langpacks
+dnf -y install $(cat /tmp/pkgs | sed -e 's/\s*#.*$//' | sed -e '/^\s*$/d')
 
 dnf5 -y copr disable atim/lazygit
 dnf5 -y copr disable yalter/niri
 
 systemctl enable podman.socket
 systemctl enable emptty.service
+
+mkdir /usr/lib/systemd/user/niri.service.wants
+ln -s /usr/lib/systemd/user/cosmic-bg.service /usr/lib/systemd/user/niri.service.wants/cosmic-bg.service
+ln -s /usr/lib/systemd/user/cosmic-bg.service /usr/lib/systemd/user/niri.service.wants/cosmic-panel.service
