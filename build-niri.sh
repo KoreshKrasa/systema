@@ -17,5 +17,8 @@ systemctl enable podman.socket
 systemctl enable emptty.service
 
 mkdir /usr/lib/systemd/user/niri.service.wants
-ln -s /usr/lib/systemd/user/cosmic-bg.service /usr/lib/systemd/user/niri.service.wants/cosmic-bg.service
-ln -s /usr/lib/systemd/user/cosmic-bg.service /usr/lib/systemd/user/niri.service.wants/cosmic-panel.service
+ln -s /usr/lib/systemd/user/cosmic-bg.service /usr/lib/systemd/user/niri.service.wants
+ln -s /usr/lib/systemd/user/cosmic-panel.service /usr/lib/systemd/user/niri.service.wants
+ln -s /usr/lib/systemd/user/cosmic-app-library.service /usr/lib/systemd/user/niri.service.wants
+ln -s /usr/lib/systemd/user/cosmic-launcher.service /usr/lib/systemd/user/niri.service.wants
+ln -s /usr/lib/systemd/user/cosmic-settings-daemon.service /usr/lib/systemd/user/niri.service.wants

@@ -16,6 +16,9 @@ COPY build-niri.sh /tmp/build.sh
 
 COPY niri/cosmic-panel.service /usr/lib/systemd/user/cosmic-panel.service
 COPY niri/cosmic-bg.service /usr/lib/systemd/user/cosmic-bg.service
+COPY niri/cosmic-app-library.service /usr/lib/systemd/user/cosmic-app-library.service
+COPY niri/cosmic-launcher.service /usr/lib/systemd/user/cosmic-launcher.service
+COPY niri/cosmic-settings-daemon.service /usr/lib/systemd/user/cosmic-settings-daemon.service
 COPY niri/pkgs /tmp/pkgs
 
 ADD https://github.com/ShadowBlip/gamescope-dbus/releases/download/v1.8.0/gamescope-dbus-1.8.0-1.x86_64.rpm /tmp/gamescope-dbus.rpm
