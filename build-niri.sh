@@ -7,7 +7,7 @@ RELEASE="$(rpm -E %fedora)"
 dnf -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 
 for f in /tmp/build/[!.]*.sh; do
-  bash "$f"
+  bash -e "$f"
 done
 
 systemctl enable podman.socket

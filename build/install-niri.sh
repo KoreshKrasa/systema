@@ -2,8 +2,7 @@ dnf -y copr enable yalter/niri
 dnf -y install niri \
   xwayland-satellite \
   rofi-wayland \
-  swww \
-  rust-niri-taskbar
+  swww
 dnf -y copr disable yalter/niri
 
 mkdir /usr/lib/systemd/user/niri.service.wants
