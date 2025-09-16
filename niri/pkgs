@@ -9,6 +9,8 @@ yazi
 # cosmic-app-library
 # cosmic-launcher
 # cosmic-applets
+gnome-keyring
+gnome-keyring-pam
 fish
 helix
 steam-devices 
