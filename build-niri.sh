@@ -11,4 +11,3 @@ for f in /tmp/build/[!.]*.sh; do
 done
 
 systemctl enable podman.socket
-systemctl enable emptty.service
