@@ -2,17 +2,9 @@ ARG SOURCE_IMAGE="base"
 ARG SOURCE_SUFFIX="-main"
 ARG SOURCE_TAG="42"
 
-# emptty build
-FROM busybox as builder
-ADD https://github.com/tvrzna/emptty/releases/download/v0.14.0/emptty-bin-x86_64-0.14.0.tar.gz /tmp/emptty.tar.gz
-RUN mkdir emptty && tar -C emptty -xvzf /tmp/emptty.tar.gz
-COPY res/emptty-pam /emptty/etc/pam.d/emptty
-COPY res/emptty-conf /emptty/etc/emptty/conf
-
 # main
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
-COPY --from=builder /emptty /
 COPY build-niri.sh /tmp/build.sh
 COPY niri/swww.service /usr/lib/systemd/user/swww.service
 COPY build /tmp/build
