@@ -1,2 +1,2 @@
-dnf install -y lightdm-gtk lightdm-gtk-greeter-settings
+dnf install -y slick-greeter lightdm-settings
 systemctl enable lightdm.service
