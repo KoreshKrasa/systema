@@ -8,8 +8,8 @@ greetd_config=$(cat <<EOF
 vt = 1
 
 [default_session]
-command = "tuigreet --cmd niri-session"
-user = "greeter"
+command = "tuigreet -r --cmd niri-session"
+user = "greetd"
 EOF
 )
 echo "$greetd_config" > /etc/greetd/config.toml
