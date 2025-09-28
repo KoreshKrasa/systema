@@ -8,7 +8,7 @@ greetd_config=$(cat <<EOF
 vt = 1
 
 [default_session]
-command = "tuigreet -r --cmd niri-session"
+command = "tuigreet --asterisks -r --cmd niri-session"
 user = "greetd"
 EOF
 )
