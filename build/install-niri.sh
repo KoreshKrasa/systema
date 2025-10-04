@@ -1,4 +1,4 @@
-dnf -y copr enable yalter/niri
+dnf -y copr enable yalter/niri-git
 dnf -y install niri \
   xwayland-satellite \
   rofi-wayland \
