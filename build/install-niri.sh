@@ -3,7 +3,7 @@ dnf -y install niri \
   xwayland-satellite \
   rofi-wayland \
   swww
-dnf -y copr disable yalter/niri
+dnf -y copr disable yalter/niri-git
 
 mkdir /usr/lib/systemd/user/niri.service.wants
 ln -s /usr/lib/systemd/user/waybar.service /usr/lib/systemd/user/niri.service.wants
