@@ -10,4 +10,4 @@ for f in /tmp/build/[!.]*.sh; do
   bash -e "$f"
 done
 
-systemctl enable podman.socket
+# systemctl enable podman.socket
