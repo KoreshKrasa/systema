@@ -3,6 +3,7 @@ echo "priority=1" | sudo tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org
 
 dnf -y install niri \
   xwayland-satellite \
+  waybar \
   rofi \
   swww
 dnf -y copr disable yalter/niri-git
