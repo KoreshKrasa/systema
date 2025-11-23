@@ -6,7 +6,7 @@ dnf -y install niri \
   waybar \
   rofi \
   swww
-dnf -y uninstall fuzzel
+dnf -y remove fuzzel
 dnf -y copr disable yalter/niri-git
 
 mkdir /usr/lib/systemd/user/niri.service.wants
