@@ -5,7 +5,8 @@ dnf -y install niri \
   xwayland-satellite \
   waybar \
   rofi \
-  swww
+  swww \
+  wlsunset
 dnf -y remove fuzzel
 dnf -y copr disable yalter/niri-git
 

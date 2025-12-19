@@ -1,11 +1,11 @@
 ---
-name: build-ublue-nvidia
+name: build-ublue-custom
 on:
   # pull_request:
   #   branches:
   #     - main
-  # schedule:
-  #   - cron: '05 16 * * 5'  # 10:05am UTC everyday
+  schedule:
+    - cron: '05 16 * * 5'  # 10:05am UTC everyday
   push:
     branches:
       - main
@@ -61,6 +61,7 @@ jobs:
 
           BUILD_TAGS+=("${TIMESTAMP}")
           BUILD_TAGS+=("latest")
+          BUILD_TAGS+=("cosmic")
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
               echo "Generated the following commit tags: "
@@ -99,10 +100,10 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           containerfiles: |
-            ./Containerfile.nvidia
+            ./Containerfile.cosmic
           # Postfix image name with -custom to make it a little more descriptive
           # Syntax: https://docs.github.com/en/actions/learn-github-actions/expressions#format
-          image: ${{ format('{0}-{1}', env.MY_IMAGE_NAME, 'nvidia') }}
+          image: ${{ env.MY_IMAGE_NAME }}
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
           labels: ${{ steps.meta.outputs.labels }}
