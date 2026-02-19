@@ -1,2 +1,2 @@
 dnf -y install vicinae
-systemctl enable vicinae.service
+# systemctl --user enable vicinae.service
