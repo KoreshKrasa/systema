@@ -7,6 +7,7 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
 COPY build.sh /tmp/build.sh
 COPY niri/swww.service /usr/lib/systemd/user/swww.service
+COPY niri/noctalia.service /usr/lib/systemd/user/noctalia.service
 COPY build-niri /tmp/build
 
 ADD --chmod=644 https://raw.githubusercontent.com/KoreshKrasa/kropki/refs/heads/main/niri/config.kdl /etc/niri/config.kdl
