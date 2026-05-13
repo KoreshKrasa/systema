@@ -1,8 +1,3 @@
-# dnf -y --setopt=install_weak_deps=False install cosmic-greeter
-# systemdctl enable cosmic-greeter.service
-
-dnf -y install tuigreet
-
 greetd_config=$(cat <<EOF
 [terminal]
 vt = 1

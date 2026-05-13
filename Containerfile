@@ -2,10 +2,15 @@ ARG SOURCE_IMAGE="base"
 ARG SOURCE_SUFFIX="-main"
 ARG SOURCE_TAG="43"
 
+# main
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
 COPY build.sh /tmp/build.sh
-COPY build-cosmic /tmp/build
+COPY data/noctalia.service /usr/lib/systemd/user/noctalia.service
+COPY build /tmp/build
+COPY data /tmp/data
+
+ADD --chmod=644 https://raw.githubusercontent.com/KoreshKrasa/kropki/refs/heads/main/niri/config.kdl /etc/niri/config.kdl
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
