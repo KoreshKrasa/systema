@@ -1,16 +1,13 @@
 bibata-cursor-theme
-papirus-icon-theme-dark
 yazi
 jujutsu
 zoxide
 noctalia-git
 noctalia-greeter
-layer-shell-qt
 niri
 xwayland-satellite
-lazygit
+gitui
 ghostty
-tuigreet
 gnome-keyring
 gnome-keyring-pam
 fish
@@ -26,4 +23,3 @@ python3-lsp-server
 cargo
 rust-analyzer
 rustfmt
-btop
