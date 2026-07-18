@@ -21,5 +21,6 @@ ruff
 uv
 python3-lsp-server
 cargo
+clippy
 rust-analyzer
 rustfmt
